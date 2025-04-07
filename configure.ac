@@ -52,6 +52,7 @@ AX_CODE_COVERAGE
 ##
 AC_CONFIG_FILES( \
   Makefile \
+  vendored/libtap/Makefile \
 )
 
 AC_OUTPUT

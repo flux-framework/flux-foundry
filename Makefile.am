@@ -1,4 +1,5 @@
-SUBDIRS =
+SUBDIRS = \
+	vendored/libtap
 
 EXTRA_DIST = \
 	NEWS.md \

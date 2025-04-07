@@ -15,6 +15,19 @@ noinst_LTLIBRARIES = \
 fluxinclude_HEADERS = \
     hostlist.h
 
+lib_LTLIBRARIES = \
+	libflux-hostlist.la
+
+libflux_hostlist_la_SOURCES =
+libflux_hostlist_la_LIBADD = \
+	$(builddir)/libhostlist.la
+libflux_hostlist_la_LDFLAGS = \
+	-export-symbols-regex "^(hostlist_|__asan)" \
+	-version-info 1:0:0 \
+	-shared -export-dynamic --disable-static \
+	$(ld_gc_sections) \
+	$(san_ld_zdef_flag)
+
 libhostlist_la_SOURCES = \
     util.h \
     util.c \

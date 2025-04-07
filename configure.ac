@@ -47,12 +47,17 @@ LT_INIT
 
 AX_CODE_COVERAGE
 
+AS_VAR_SET(fluxincludedir, $includedir/flux)
+AC_SUBST(fluxincludedir)
+
 ##
 # Epilogue
 ##
 AC_CONFIG_FILES( \
   Makefile \
   vendored/libtap/Makefile \
+  src/libutil/Makefile \
+  src/libhostlist/Makefile \
 )
 
 AC_OUTPUT

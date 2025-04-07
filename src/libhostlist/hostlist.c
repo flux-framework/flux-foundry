@@ -22,7 +22,7 @@
 #include <sys/param.h>
 #include <unistd.h>
 
-#include "src/common/libutil/errno_safe.h"
+#include "src/libutil/errno_safe.h"
 
 #include "hostlist.h"
 #include "hostrange.h"

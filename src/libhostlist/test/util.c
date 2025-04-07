@@ -12,8 +12,8 @@
 #include "config.h"
 #endif
 
-#include "src/common/libtap/tap.h"
-#include "src/common/libhostlist/util.h"
+#include "vendored/libtap/tap.h"
+#include "util.h"
 
 struct width_test {
     const char *descr;

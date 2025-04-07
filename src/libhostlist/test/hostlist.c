@@ -15,8 +15,8 @@
 #include <string.h>
 #include <errno.h>
 
-#include "src/common/libtap/tap.h"
-#include "src/common/libhostlist/hostlist.h"
+#include "vendored/libtap/tap.h"
+#include "hostlist.h"
 
 void test_basic ()
 {

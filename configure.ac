@@ -48,6 +48,34 @@ LT_INIT
 
 AX_CODE_COVERAGE
 
+AC_ARG_ENABLE([docs],
+              AS_HELP_STRING([--disable-docs], [disable building docs]))
+AS_IF([test "x$enable_docs" != "xno"], [
+            AM_PATH_PYTHON(3.6)
+            AM_CHECK_PYMOD(sphinx,
+                           [Version(sphinx.__version__) >= Version ('1.6.7')],
+                           [sphinx=true],
+                           [sphinx=false; AC_MSG_WARN([could not find sphinx to generate docs, version 1.6.7+ required])]
+                           )
+            AM_CHECK_PYMOD(docutils,
+                           [Version(docutils.__version__) >= Version ('0.11.0')],
+                           [docutils=true],
+                           [docutils=false; AC_MSG_WARN([could not find docutils to generate docs, version 0.11.0+ required])]
+                           )
+])
+#  If --enable-docs=yes, but no doc generator found,
+#   then error immediately:
+#
+AS_IF([test "x$enable_docs" = "xyes" -a "x$sphinx" = "xfalse"],[
+  AC_MSG_ERROR([--enable-docs used but no document generator found!])
+])
+AS_IF([test "x$enable_docs" = "xyes" -a "x$docutils" = "xfalse"],[
+  AC_MSG_ERROR([--enable-docs used but docutils not found!])
+])
+AM_CONDITIONAL([ENABLE_DOCS], [test "x$sphinx" = "xtrue" -a "x$docutils" = "xtrue"])
+AC_CHECK_PROG(ASPELL,[aspell],[aspell])
+
+
 AS_VAR_SET(fluxincludedir, $includedir/flux)
 AC_SUBST(fluxincludedir)
 
@@ -60,6 +88,8 @@ AC_CONFIG_FILES( \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
   src/libhostlist/flux-hostlist.pc \
+  doc/Makefile \
+  doc/test/Makefile \
 )
 
 AC_OUTPUT

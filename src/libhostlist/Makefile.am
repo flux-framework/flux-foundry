@@ -9,6 +9,8 @@ AM_LDFLAGS = \
 AM_CPPFLAGS = \
     $(CODE_COVERAGE_CPPFLAGS)
 
+pkgconfig_DATA = flux-hostlist.pc
+
 noinst_LTLIBRARIES = \
     libhostlist.la
 

@@ -29,6 +29,7 @@ AC_SUBST([AX_POINT_VERSION])
 # Initialize pkg-config for PKG_CHECK_MODULES to avoid conditional issues
 ##
 PKG_PROG_PKG_CONFIG
+PKG_INSTALLDIR
 
 # Checks for programs
 ##
@@ -58,6 +59,7 @@ AC_CONFIG_FILES( \
   vendored/libtap/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
+  src/libhostlist/flux-hostlist.pc \
 )
 
 AC_OUTPUT

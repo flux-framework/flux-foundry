@@ -1,0 +1,17 @@
+Source: flux-foundry
+Section: devel
+Priority: optional
+Maintainer: Mark A. Grondona <mark.grondona@gmail.com>
+Standards-Version: 4.1.2
+Build-Depends:
+  debhelper (>= 10),
+  python3-dev,
+  python3-ply,
+  python3-sphinx
+
+Homepage: https://github.com/flux-framework/flux-foundry
+Package: flux-foundry
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description:  Base classes used by other flux-framework projects
+ flux-foundry implements base classes used by other flux-framework projects.

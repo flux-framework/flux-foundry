@@ -1,5 +1,8 @@
 SUBDIRS = \
-	vendored/libtap
+	vendored/libtap \
+	src/libutil \
+	src/libhostlist \
+	doc
 
 EXTRA_DIST = \
 	NEWS.md \

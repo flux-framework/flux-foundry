@@ -9,6 +9,8 @@ Build-Depends:
   python3-ply,
   python3-sphinx
 
+Replaces: flux-core (<= 0.73.0)
+Breaks: flux-core (<= 0.73.0)
 Homepage: https://github.com/flux-framework/flux-foundry
 Package: flux-foundry
 Architecture: any

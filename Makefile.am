@@ -4,6 +4,7 @@ SUBDIRS = \
 	vendored/libveb \
 	src/libutil \
 	src/libhostlist \
+	src/libidset \
 	doc
 
 EXTRA_DIST = \

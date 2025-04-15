@@ -16,7 +16,7 @@
  * All ops are O(log m), for key bitsize m: 2^m == T.M.
  */
 
-#include "veb.h"
+#include "vendored/libveb/veb.h"
 #include "idset.h"
 
 struct idset {

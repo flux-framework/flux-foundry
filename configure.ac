@@ -90,6 +90,7 @@ AC_CONFIG_FILES( \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
   src/libhostlist/flux-hostlist.pc \
+  src/libidset/Makefile \
   doc/Makefile \
   doc/test/Makefile \
 )

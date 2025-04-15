@@ -19,7 +19,7 @@
 #include <stdarg.h>
 #include <stdbool.h>
 
-#include "src/common/libutil/errno_safe.h"
+#include "src/libutil/errno_safe.h"
 
 #include "idset.h"
 #include "idset_private.h"

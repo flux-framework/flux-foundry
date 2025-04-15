@@ -10,6 +10,8 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/vendored/libccan
 
+pkgconfig_DATA = flux-idset.pc
+
 noinst_LTLIBRARIES = libidset.la
 fluxinclude_HEADERS = idset.h
 libidset_la_SOURCES = idset.c \

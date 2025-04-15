@@ -18,6 +18,20 @@ libidset_la_SOURCES = idset.c \
 		      idset_encode.c \
 		      idset_format.c
 
+lib_LTLIBRARIES = \
+	libflux-idset.la
+
+libflux_idset_la_SOURCES =
+libflux_idset_la_LIBADD = \
+	$(builddir)/libidset.la \
+	$(top_builddir)/vendored/libveb/libveb.la
+libflux_idset_la_LDFLAGS = \
+	-export-symbols-regex "^(idset_|__asan)" \
+	-version-info 1:0:0 \
+	-shared -export-dynamic --disable-static \
+	$(ld_gc_sections) \
+	$(san_ld_zdef_flag)
+
 TESTS = test_idset.t
 
 check_PROGRAMS = $(TESTS)

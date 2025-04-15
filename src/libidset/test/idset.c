@@ -15,10 +15,9 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "src/common/libtap/tap.h"
-#include "src/common/libczmqcontainers/czmq_containers.h"
-#include "src/common/libidset/idset.h"
-#include "src/common/libidset/idset_private.h"
+#include "vendored/libtap/tap.h"
+#include "idset.h"
+#include "idset_private.h"
 #include "ccan/array_size/array_size.h"
 #include "ccan/str/str.h"
 

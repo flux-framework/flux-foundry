@@ -1,6 +1,7 @@
 SUBDIRS = \
 	vendored/libtap \
 	vendored/libccan \
+	vendored/libveb \
 	src/libutil \
 	src/libhostlist \
 	doc

@@ -7,7 +7,12 @@ MAN_FILES = $(MAN3_FILES)
 MAN3_FILES = $(MAN3_FILES_PRIMARY) $(MAN3_FILES_SECONDARY)
 
 MAN3_FILES_PRIMARY = \
-	man3/hostlist_create.3
+	man3/hostlist_create.3 \
+	man3/idset_create.3 \
+	man3/idset_encode.3 \
+	man3/idset_decode.3 \
+	man3/idset_add.3 \
+	man3/idset_alloc.3
 
 MAN3_FILES_SECONDARY = \
 	man3/hostlist_destroy.3 \
@@ -26,7 +31,35 @@ MAN3_FILES_SECONDARY = \
 	man3/hostlist_last.3 \
 	man3/hostlist_next.3 \
 	man3/hostlist_current.3 \
-	man3/hostlist_remove_current.3
+	man3/hostlist_remove_current.3 \
+	man3/idset_destroy.3 \
+	man3/idset_decode_ex.3 \
+	man3/idset_decode_empty.3 \
+	man3/idset_decode_info.3 \
+	man3/idset_decode_add.3 \
+	man3/idset_decode_subtract.3 \
+	man3/idset_copy.3 \
+	man3/idset_test.3 \
+	man3/idset_set.3 \
+	man3/idset_range_set.3 \
+	man3/idset_clear.3 \
+	man3/idset_range_clear.3 \
+	man3/idset_first.3 \
+	man3/idset_last.3 \
+	man3/idset_next.3 \
+	man3/idset_prev.3 \
+	man3/idset_empty.3 \
+	man3/idset_universe_size.3 \
+	man3/idset_count.3 \
+	man3/idset_equal.3 \
+	man3/idset_subtract.3 \
+	man3/idset_union.3 \
+	man3/idset_difference.3 \
+	man3/idset_intersect.3 \
+	man3/idset_has_intersection.3 \
+	man3/idset_clear_all.3 \
+	man3/idset_free.3 \
+	man3/idset_free_check.3
 
 RST_FILES  = \
 	$(MAN3_FILES_PRIMARY:.3=.rst)

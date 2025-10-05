@@ -14,8 +14,8 @@
 
 #include <errno.h>
 
-#include "src/common/libtap/tap.h"
-#include "src/common/libhostlist/hostname.h"
+#include "vendored/libtap/tap.h"
+#include "hostname.h"
 
 struct hostname_test {
     char *input;

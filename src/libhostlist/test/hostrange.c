@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: LGPL-3.0
 \************************************************************/
 
-#include "src/common/libhostlist/hostname.h"
+#include "hostname.h"
 #if HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -17,8 +17,8 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#include "src/common/libtap/tap.h"
-#include "src/common/libhostlist/hostrange.h"
+#include "vendored/libtap/tap.h"
+#include "hostrange.h"
 
 void test_create_single ()
 {

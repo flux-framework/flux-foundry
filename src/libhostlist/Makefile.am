@@ -43,29 +43,29 @@ test_hostname_t_SOURCES = \
 test_hostname_t_CPPFLAGS = \
     $(AM_CPPFLAGS)
 test_hostname_t_LDADD = \
-    $(top_builddir)/src/common/libtap/libtap.la \
-    $(top_builddir)/src/common/libhostlist/libhostlist.la
+    $(top_builddir)/vendored/libtap/libtap.la \
+    $(top_builddir)/src/libhostlist/libhostlist.la
 
 test_util_t_SOURCES = \
     test/util.c
 test_util_t_CPPFLAGS = \
     $(AM_CPPFLAGS)
 test_util_t_LDADD = \
-    $(top_builddir)/src/common/libtap/libtap.la \
-    $(top_builddir)/src/common/libhostlist/libhostlist.la
+    $(top_builddir)/vendored/libtap/libtap.la \
+    $(top_builddir)/src/libhostlist/libhostlist.la
 
 test_hostrange_t_SOURCES = \
     test/hostrange.c
 test_hostrange_t_CPPFLAGS = \
     $(AM_CPPFLAGS)
 test_hostrange_t_LDADD = \
-    $(top_builddir)/src/common/libtap/libtap.la \
-    $(top_builddir)/src/common/libhostlist/libhostlist.la
+    $(top_builddir)/vendored/libtap/libtap.la \
+    $(top_builddir)/src/libhostlist/libhostlist.la
 
 test_hostlist_t_SOURCES = \
     test/hostlist.c
 test_hostlist_t_CPPFLAGS = \
     $(AM_CPPFLAGS)
 test_hostlist_t_LDADD = \
-    $(top_builddir)/src/common/libtap/libtap.la \
-    $(top_builddir)/src/common/libhostlist/libhostlist.la
+    $(top_builddir)/vendored/libtap/libtap.la \
+    $(top_builddir)/src/libhostlist/libhostlist.la

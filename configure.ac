@@ -100,6 +100,7 @@ AC_CONFIG_FILES( \
   src/libidset/Makefile \
   src/libidset/flux-idset.pc \
   src/liboptparse/Makefile \
+  src/liboptparse/flux-optparse.pc \
   doc/Makefile \
   doc/test/Makefile \
 )

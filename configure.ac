@@ -92,6 +92,7 @@ AC_CONFIG_FILES( \
   vendored/libccan/Makefile \
   vendored/libveb/Makefile \
   vendored/libglibc/Makefile \
+  vendored/libczmq/Makefile \
   src/libmissing/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \

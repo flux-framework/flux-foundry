@@ -3,6 +3,7 @@ SUBDIRS = \
 	vendored/libccan \
 	vendored/libveb \
 	vendored/libglibc \
+	vendored/libczmq \
 	src/libmissing \
 	src/libutil \
 	src/libhostlist \

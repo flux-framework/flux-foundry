@@ -21,18 +21,18 @@
 #ifdef HAVE_ARGZ_ADD
 #include <argz.h>
 #else
-#include "src/common/libmissing/argz.h"
+#include "src/libmissing/argz.h"
 #endif
 #include <math.h>
 
-#include "src/common/libczmqcontainers/czmq_containers.h"
-#include "src/common/libutil/fsd.h"
-#include "src/common/libutil/parse_size.h"
+#include "vendored/libczmq/czmq.h"
+#include "src/libutil/fsd.h"
+#include "src/libutil/parse_size.h"
 #include "ccan/str/str.h"
 
 #include "optparse.h"
-#include "getopt.h"
-#include "getopt_int.h"
+#include "vendored/libglibc/getopt.h"
+#include "vendored/libglibc/getopt_int.h"
 
 /******************************************************************************
  *  Datatypes:

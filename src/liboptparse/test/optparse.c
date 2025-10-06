@@ -16,8 +16,8 @@
 #include <string.h>
 #include <stdarg.h>
 
-#include "src/common/libtap/tap.h"
-#include "src/common/liboptparse/optparse.h"
+#include "vendored/libtap/tap.h"
+#include "optparse.h"
 #include "ccan/array_size/array_size.h"
 
 static void *myfatal_h = NULL;

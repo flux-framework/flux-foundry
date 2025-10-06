@@ -48,3 +48,5 @@ test_optparse_t_LDADD = \
 	$(top_builddir)/vendored/libglibc/libglibc.la \
 	$(top_builddir)/src/libutil/libutil.la \
 	$(top_builddir)/src/libmissing/libmissing.la
+
+pkgconfig_DATA = flux-optparse.pc

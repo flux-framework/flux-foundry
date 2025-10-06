@@ -2,6 +2,8 @@ SUBDIRS = \
 	vendored/libtap \
 	vendored/libccan \
 	vendored/libveb \
+	vendored/libglibc \
+	src/libmissing \
 	src/libutil \
 	src/libhostlist \
 	src/libidset \

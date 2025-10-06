@@ -8,6 +8,7 @@ SUBDIRS = \
 	src/libutil \
 	src/libhostlist \
 	src/libidset \
+	src/liboptparse \
 	doc
 
 EXTRA_DIST = \

@@ -99,6 +99,7 @@ AC_CONFIG_FILES( \
   src/libhostlist/flux-hostlist.pc \
   src/libidset/Makefile \
   src/libidset/flux-idset.pc \
+  src/liboptparse/Makefile \
   doc/Makefile \
   doc/test/Makefile \
 )

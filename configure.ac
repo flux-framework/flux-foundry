@@ -85,9 +85,13 @@ AC_SUBST(fluxincludedir)
 AC_CONFIG_FILES( \
   Makefile \
   vendored/libtap/Makefile \
+  vendored/libccan/Makefile \
+  vendored/libveb/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
   src/libhostlist/flux-hostlist.pc \
+  src/libidset/Makefile \
+  src/libidset/flux-idset.pc \
   doc/Makefile \
   doc/test/Makefile \
 )

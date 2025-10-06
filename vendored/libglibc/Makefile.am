@@ -11,7 +11,10 @@ AM_CPPFLAGS = \
 
 
 noinst_LTLIBRARIES = libglibc.la
-libglibc_la_SOURCES =
+libglibc_la_SOURCES = \
+	getopt.c \
+	getopt_int.h \
+	getopt.h
 
 EXTRA_libglibc_la_SOURCES = \
 	argz.h \

@@ -9,8 +9,7 @@ AM_CPPFLAGS = \
 	$(CODE_COVERAGE_CPPFLAGS) \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/src/include \
-	-I$(top_srcdir)/src/common/libccan \
-	-I$(top_builddir)/src/common/libflux \
+	-I$(top_srcdir)/vendored/libccan \
 	$(JANSSON_CFLAGS)
 
 noinst_LTLIBRARIES = \
@@ -33,9 +32,10 @@ T_LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) \
 test_taskmap_t_SOURCES = test/taskmap.c
 test_taskmap_t_CPPFLAGS = $(AM_CPPFLAGS)
 test_taskmap_t_LDADD = \
-	$(top_builddir)/src/common/libtap/libtap.la \
-	$(top_builddir)/src/common/libtaskmap/libtaskmap.la \
-	$(top_builddir)/src/common/libutil/libutil.la \
-	$(top_builddir)/src/common/libidset/libidset.la \
-	$(top_builddir)/src/common/libczmqcontainers/libczmqcontainers.la \
+	$(top_builddir)/vendored/libtap/libtap.la \
+	$(builddir)/libtaskmap.la \
+	$(top_builddir)/src/libutil/libutil.la \
+	$(top_builddir)/src/libidset/libidset.la \
+	$(top_builddir)/vendored/libveb/libveb.la \
+	$(top_builddir)/vendored/libczmq/libczmq.la \
 	$(JANSSON_LIBS)

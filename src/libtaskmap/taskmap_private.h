@@ -12,7 +12,7 @@
 #define _UTIL_TASKMAP_PRIVATE_H
 
 #include <jansson.h>
-#include <flux/taskmap.h>
+#include "taskmap.h"
 
 json_t *taskmap_encode_json (const struct taskmap *map, int flags);
 

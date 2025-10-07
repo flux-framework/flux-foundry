@@ -11,7 +11,7 @@
 #ifndef _UTIL_TASKMAP_H
 #define _UTIL_TASKMAP_H
 
-#include <flux/core.h>
+#include <flux/types.h>
 #include <flux/idset.h>
 
 #ifdef __cplusplus

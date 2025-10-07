@@ -9,6 +9,7 @@ SUBDIRS = \
 	src/libhostlist \
 	src/libidset \
 	src/liboptparse \
+	src/libtaskmap \
 	doc
 
 EXTRA_DIST = \

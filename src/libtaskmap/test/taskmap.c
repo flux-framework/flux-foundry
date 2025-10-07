@@ -12,11 +12,12 @@
 #include "config.h"
 #endif
 #include <errno.h>
+#include <string.h>
 
-#include <flux/taskmap.h>
+#include "taskmap.h"
 #include "taskmap_private.h"
 
-#include "src/common/libtap/tap.h"
+#include "vendored/libtap/tap.h"
 
 struct test_args {
     const char *input;

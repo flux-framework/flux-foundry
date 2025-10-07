@@ -13,15 +13,15 @@
 #endif
 
 #include <ctype.h>
+#include <errno.h>
 #include <jansson.h>
 
-#include <flux/core.h>
-#include <flux/idset.h>
+#include "src/libidset/idset.h"
 
-#include "src/common/libczmqcontainers/czmq_containers.h"
-#include "src/common/libutil/errprintf.h"
-#include "src/common/libutil/lru_cache.h"
-#include "src/common/libutil/errno_safe.h"
+#include "vendored/libczmq/czmq.h"
+#include "src/libutil/errprintf.h"
+#include "src/libutil/lru_cache.h"
+#include "src/libutil/errno_safe.h"
 #include "ccan/str/str.h"
 #include "taskmap.h"
 

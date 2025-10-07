@@ -11,17 +11,13 @@ SYNOPSIS
 
    #include <flux/idset.h>
 
-   typedef struct {
-      char text[160];
-   } idset_error_t;
-
    struct idset *idset_decode (const char *s);
 
    struct idset *idset_decode_ex (const char *s,
                                   ssize_t len,
                                   ssize_t size,
                                   int flags,
-                                  idset_error_t *error);
+                                  flux_error_t *error);
 
    bool idset_decode_empty (const char *s, ssize_t len);
 
@@ -29,17 +25,17 @@ SYNOPSIS
                           ssize_t len,
                           size_t *count,
                           unsigned int *maxid,
-                          idset_error_t *error);
+                          flux_error_t *error);
 
    int idset_decode_add (struct idset *idset,
                          const char *s,
                          ssize_t len,
-                         idset_error_t *error);
+                         flux_error_t *error);
 
    int idset_decode_subtract (struct idset *idset,
                               const char *s,
                               ssize_t len,
-                              idset_error_t *error);
+                              flux_error_t *error);
 
 Link with :command:`-lflux-idset`.
 
@@ -96,7 +92,7 @@ and use :func:`idset_decode_empty` to distinguish it from a parse error, e.g.
 .. code-block:: c
 
     struct idset *idset;
-    idset_error_t error;
+    flux_error_t error;
 
     if (idset_decode_empty (input, -1))
         idset = NULL;

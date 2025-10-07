@@ -12,6 +12,8 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir)/vendored/libccan \
 	$(JANSSON_CFLAGS)
 
+pkgconfig_DATA = flux-taskmap.pc
+
 noinst_LTLIBRARIES = \
 	libtaskmap.la
 fluxinclude_HEADERS = \

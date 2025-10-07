@@ -104,6 +104,7 @@ AC_CONFIG_FILES( \
   src/liboptparse/Makefile \
   src/liboptparse/flux-optparse.pc \
   src/libtaskmap/Makefile \
+  src/libtaskmap/flux-taskmap.pc \
   doc/Makefile \
   doc/test/Makefile \
 )

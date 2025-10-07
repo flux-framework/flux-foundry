@@ -15,7 +15,9 @@ EXTRA_DIST = \
 	NEWS.md \
 	README.md \
 	NOTICE.LLNS \
-	config/tap-driver.sh
+	config/tap-driver.sh \
+	vendored/libjansson/LICENSE \
+	vendored/libjansson/value.c
 
 ACLOCAL_AMFLAGS = -I config
 

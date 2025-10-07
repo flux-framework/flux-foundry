@@ -20,6 +20,24 @@ libtaskmap_la_SOURCES = \
 	taskmap_private.h \
 	taskmap.c
 
+lib_LTLIBRARIES = \
+	libflux-taskmap.la
+
+libflux_taskmap_la_SOURCES =
+libflux_taskmap_la_LIBADD = \
+	$(builddir)/libtaskmap.la \
+	$(top_builddir)/src/libutil/libutil.la \
+	$(top_builddir)/src/libidset/libidset.la \
+	$(top_builddir)/vendored/libveb/libveb.la \
+	$(top_builddir)/vendored/libczmq/libczmq.la \
+	$(JANSSON_LIBS)
+libflux_taskmap_la_LDFLAGS = \
+	-export-symbols-regex "^(taskmap_|__asan)" \
+	-version-info 1:0:0 \
+	-shared -export-dynamic --disable-static \
+	$(ld_gc_sections) \
+	$(san_ld_zdef_flag)
+
 TESTS = test_taskmap.t
 
 check_PROGRAMS = \

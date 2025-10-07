@@ -19,4 +19,6 @@ libutil_la_SOURCES = \
 	fsd.h \
 	fsd.c \
 	parse_size.h \
-	parse_size.c
+	parse_size.c \
+	errprintf.h \
+	errprintf.c

@@ -12,6 +12,8 @@ AM_CPPFLAGS = \
 
 noinst_LTLIBRARIES = libutil.la
 
+fluxinclude_HEADERS = types.h
+
 libutil_la_SOURCES = \
 	errno_safe.h \
 	fsd.h \

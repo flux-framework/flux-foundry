@@ -20,33 +20,10 @@
 #include <stdbool.h>
 #include <ctype.h>
 
+#include "src/libutil/errprintf.h"
+
 #include "idset.h"
 #include "idset_private.h"
-
-static int verrprintf (idset_error_t *errp, const char *fmt, va_list ap)
-{
-    if (errp) {
-        int saved_errno = errno;
-        memset (errp->text, 0, sizeof (errp->text));
-        if (fmt) {
-            int n;
-            n = vsnprintf (errp->text, sizeof (errp->text), fmt, ap);
-            if (n > sizeof (errp->text))
-                errp->text[sizeof (errp->text) - 2] = '+';
-        }
-        errno = saved_errno;
-    }
-    return -1;
-}
-
-static int errprintf (idset_error_t *errp, const char *fmt, ...)
-{
-    va_list ap;
-    va_start (ap, fmt);
-    verrprintf (errp, fmt, ap);
-    va_end (ap);
-    return -1;
-}
 
 /* strtoul() with result parameter, assumed base=10.
  * Fail if no digits, leading non-digits, or leading zero.
@@ -109,7 +86,7 @@ static int append_element (struct idset *idset,
                            const char *s,
                            size_t *count,
                            unsigned int *maxid,
-                           idset_error_t *error)
+                           flux_error_t *error)
 {
     unsigned int hi, lo;
 
@@ -140,7 +117,7 @@ error:
 static int remove_element (struct idset *idset,
                            const char *s,
                            unsigned int *maxid,
-                           idset_error_t *error)
+                           flux_error_t *error)
 {
     unsigned int hi, lo;
 
@@ -167,7 +144,7 @@ error:
 /* Trim brackets by dropping a \0 on the tail of 's' and returning a starting
  * pointer within 's'.  On failure return NULL with errno and error set.
  */
-static char *trim_brackets (char *s, idset_error_t *error)
+static char *trim_brackets (char *s, flux_error_t *error)
 {
     int len = strlen (s);
 
@@ -183,7 +160,7 @@ static char *trim_brackets (char *s, idset_error_t *error)
     return s;
 }
 
-static char *dup_input (const char *str, ssize_t len, idset_error_t *error)
+static char *dup_input (const char *str, ssize_t len, flux_error_t *error)
 {
     char *cpy;
     if (!str) {
@@ -211,7 +188,7 @@ static int decode_and_set_with_info (struct idset *idset,
                                      ssize_t len,
                                      size_t *countp,
                                      unsigned int *maxidp,
-                                     idset_error_t *error)
+                                     flux_error_t *error)
 {
     char *cpy;
     char *tok, *saveptr, *a1;
@@ -246,7 +223,7 @@ struct idset *idset_decode_ex (const char *str,
                                ssize_t len,
                                ssize_t size,
                                int flags,
-                               idset_error_t *error)
+                               flux_error_t *error)
 {
     struct idset *idset;
 
@@ -298,7 +275,7 @@ int idset_decode_info (const char *str,
                        ssize_t len,
                        size_t *count,
                        unsigned int *maxid,
-                       idset_error_t *error)
+                       flux_error_t *error)
 {
     return decode_and_set_with_info (NULL, str, len, count, maxid, error);
 }
@@ -306,7 +283,7 @@ int idset_decode_info (const char *str,
 int idset_decode_add (struct idset *idset,
                       const char *str,
                       ssize_t len,
-                      idset_error_t *error)
+                      flux_error_t *error)
 {
     return decode_and_set_with_info (idset, str, len, NULL, NULL, error);
 }
@@ -314,7 +291,7 @@ int idset_decode_add (struct idset *idset,
 int idset_decode_subtract (struct idset *idset,
                            const char *str,
                            ssize_t len,
-                           idset_error_t *error)
+                           flux_error_t *error)
 {
     char *cpy;
     char *tok, *saveptr, *a1;

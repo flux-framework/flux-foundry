@@ -1019,17 +1019,18 @@ void test_alloc_badparam (void)
 void test_decode_ex (void)
 {
     struct idset *idset;
-    idset_error_t error;
+    flux_error_t error;
+    idset_error_t old_error; // compile test backwards compat
 
     /* First, for fun, just generate some run of the mill parsing errors that
      * are already tested above and show the textual errors on the diag output.
      */
     errno = 0;
-    error.text[0] = '\0';
-    idset = idset_decode_ex ("0", 1, 0, 0xffff, &error);
-    ok (idset == NULL && errno == EINVAL && strlen (error.text) > 0,
+    old_error.text[0] = '\0';
+    idset = idset_decode_ex ("0", 1, 0, 0xffff, &old_error);
+    ok (idset == NULL && errno == EINVAL && strlen (old_error.text) > 0,
         "idset_decode_ex flags=0xffff fails with EINVAL");
-    diag ("%s", error.text);
+    diag ("%s", old_error.text);
 
     errno = 0;
     error.text[0] = '\0';
@@ -1138,7 +1139,7 @@ struct infovec infovec[] = {
 void test_decode_info (void)
 {
     for (int i = 0; i < ARRAY_SIZE (infovec); i++) {
-        idset_error_t error;
+        flux_error_t error;
         size_t count = 0;
         unsigned int maxid = 0;
         int rc;
@@ -1175,7 +1176,7 @@ void test_decode_info (void)
 void test_decode_addsub (void)
 {
     struct idset *idset;
-    idset_error_t error;
+    flux_error_t error;
 
     if (!(idset = idset_create (0, IDSET_FLAG_AUTOGROW)))
         BAIL_OUT ("idset_create failed");

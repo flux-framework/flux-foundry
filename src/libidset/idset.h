@@ -19,6 +19,8 @@
 #include <sys/param.h>
 #include <stdbool.h>
 
+#include <flux/types.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -33,9 +35,7 @@ enum idset_flags {
     IDSET_FLAG_ALLOC_RR = 32, // idset_alloc() allocates using round-robin
 };
 
-typedef struct {
-    char text[160];
-} idset_error_t;
+typedef flux_error_t idset_error_t; // backwards compatibility
 
 #define IDSET_INVALID_ID    (UINT_MAX - 1)
 
@@ -92,7 +92,7 @@ struct idset *idset_decode_ex (const char *s,
                                ssize_t len,
                                ssize_t size,
                                int flags,
-                               idset_error_t *error);
+                               flux_error_t *error);
 
 /* Parse 'len' chars of string 's' to determine if it is the empty set.
  * Return false on parse error.  This may be useful when representing the
@@ -110,7 +110,7 @@ int idset_decode_info (const char *s,
                        ssize_t len,
                        size_t *count,
                        unsigned int *maxid,
-                       idset_error_t *error);
+                       flux_error_t *error);
 
 /* Parse 'len' chars of string 's' and add it to 'idset',
  * without creating an intermediate idset.
@@ -120,7 +120,7 @@ int idset_decode_info (const char *s,
 int idset_decode_add (struct idset *idset,
                       const char *s,
                       ssize_t len,
-                      idset_error_t *error);
+                      flux_error_t *error);
 
 /* Parse 'len' chars of string 's' and subtract it from 'idset',
  * without creating an intermediate idset.
@@ -130,7 +130,7 @@ int idset_decode_add (struct idset *idset,
 int idset_decode_subtract (struct idset *idset,
                            const char *s,
                            ssize_t len,
-                           idset_error_t *error);
+                           flux_error_t *error);
 
 
 /* Add id (or range [lo-hi]) to idset.

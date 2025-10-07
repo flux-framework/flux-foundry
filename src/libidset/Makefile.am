@@ -8,7 +8,8 @@ AM_LDFLAGS = \
 AM_CPPFLAGS = \
 	$(CODE_COVERAGE_CPPFLAGS) \
 	-I$(top_srcdir) \
-	-I$(top_srcdir)/vendored/libccan
+	-I$(top_srcdir)/vendored/libccan \
+	-I$(top_srcdir)/src/include
 
 pkgconfig_DATA = flux-idset.pc
 
@@ -26,7 +27,8 @@ lib_LTLIBRARIES = \
 libflux_idset_la_SOURCES =
 libflux_idset_la_LIBADD = \
 	$(builddir)/libidset.la \
-	$(top_builddir)/vendored/libveb/libveb.la
+	$(top_builddir)/vendored/libveb/libveb.la \
+	$(top_builddir)/src/libutil/libutil.la
 libflux_idset_la_LDFLAGS = \
 	-export-symbols-regex "^(idset_|__asan)" \
 	-version-info 1:0:0 \
@@ -47,4 +49,5 @@ test_idset_t_CPPFLAGS = $(AM_CPPFLAGS)
 test_idset_t_LDADD = \
 	$(builddir)/libidset.la \
 	$(top_builddir)/vendored/libveb/libveb.la \
+	$(top_builddir)/src/libutil/libutil.la \
 	$(top_builddir)/vendored/libtap/libtap.la

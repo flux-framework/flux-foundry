@@ -20,7 +20,8 @@ EXTRA_DIST = \
 ACLOCAL_AMFLAGS = -I config
 
 noinst_HEADERS = \
-	src/include/flux/types.h
+	src/include/flux/types.h \
+	src/include/flux/idset.h
 
 CODE_COVERAGE_IGNORE_PATTERN = \
 	"/usr/include/*" \

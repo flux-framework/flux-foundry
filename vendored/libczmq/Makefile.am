@@ -20,7 +20,11 @@ libczmq_la_SOURCES = \
 	zhash.h \
 	zhash.c \
 	zlist.h \
-	zlist.c
+	zlist.c \
+	zhashx.h \
+	zhashx.c \
+	zlistx.h \
+	zlistx.c
 
 EXTRA_DIST = \
 	LICENSE

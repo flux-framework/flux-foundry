@@ -48,6 +48,8 @@ LT_INIT
 
 AX_CODE_COVERAGE
 
+X_AC_JANSSON
+
 AC_ARG_ENABLE([docs],
               AS_HELP_STRING([--disable-docs], [disable building docs]))
 AS_IF([test "x$enable_docs" != "xno"], [

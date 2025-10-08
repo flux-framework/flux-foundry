@@ -13,4 +13,5 @@ libmissing_la_SOURCES =
 
 EXTRA_libmissing_la_SOURCES = \
 	argz.h \
-	mempcpy.h
+	mempcpy.h \
+	json_object_update_recursive.h

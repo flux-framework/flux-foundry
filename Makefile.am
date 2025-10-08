@@ -2,9 +2,13 @@ SUBDIRS = \
 	vendored/libtap \
 	vendored/libccan \
 	vendored/libveb \
+	vendored/libglibc \
+	vendored/libczmq \
+	src/libmissing \
 	src/libutil \
 	src/libhostlist \
 	src/libidset \
+	src/liboptparse \
 	doc
 
 EXTRA_DIST = \

@@ -75,6 +75,10 @@ AS_IF([test "x$enable_docs" = "xyes" -a "x$docutils" = "xfalse"],[
 AM_CONDITIONAL([ENABLE_DOCS], [test "x$sphinx" = "xtrue" -a "x$docutils" = "xtrue"])
 AC_CHECK_PROG(ASPELL,[aspell],[aspell])
 
+AC_REPLACE_FUNCS( \
+  argz_add \
+  mempcpy \
+)
 
 AS_VAR_SET(fluxincludedir, $includedir/flux)
 AC_SUBST(fluxincludedir)
@@ -87,11 +91,16 @@ AC_CONFIG_FILES( \
   vendored/libtap/Makefile \
   vendored/libccan/Makefile \
   vendored/libveb/Makefile \
+  vendored/libglibc/Makefile \
+  vendored/libczmq/Makefile \
+  src/libmissing/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
   src/libhostlist/flux-hostlist.pc \
   src/libidset/Makefile \
   src/libidset/flux-idset.pc \
+  src/liboptparse/Makefile \
+  src/liboptparse/flux-optparse.pc \
   doc/Makefile \
   doc/test/Makefile \
 )

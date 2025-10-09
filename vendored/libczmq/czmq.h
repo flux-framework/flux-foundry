@@ -18,6 +18,8 @@
 
 typedef struct _zhash_t zhash_t;
 typedef struct _zlist_t zlist_t;
+typedef struct _zhashx_t zhashx_t;
+typedef struct _zlistx_t zlistx_t;
 
 #ifndef CZMQ_EXPORT
 #define CZMQ_EXPORT
@@ -25,5 +27,7 @@ typedef struct _zlist_t zlist_t;
 
 #include "zhash.h"
 #include "zlist.h"
+#include "zhashx.h"
+#include "zlistx.h"
 
 #endif // !_LIBCZMQ_H

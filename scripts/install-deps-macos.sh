@@ -15,6 +15,7 @@ brew install \
   libtool \
   make \
   pkg-config \
-  hwloc
+  hwloc \
+  jansson
 
 echo "Now run scripts/configure-macos.sh"

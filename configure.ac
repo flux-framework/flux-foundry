@@ -82,6 +82,10 @@ AC_REPLACE_FUNCS( \
   mempcpy \
 )
 
+AC_SEARCH_LIBS([floor], [m], [], [
+  AC_MSG_ERROR([unable to find the floor() function in libm])
+])
+
 AS_VAR_SET(fluxincludedir, $includedir/flux)
 AC_SUBST(fluxincludedir)
 

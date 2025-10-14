@@ -1,0 +1,24 @@
+# do not check code copied into the project
+[files]
+extend-exclude = [
+  "config/*",
+  "vendored/*",
+  "src/libmissing/*.[ch]",
+  "doc/test/spell.en.pws",
+]
+
+[default.extend-words]
+# commonly used names/variables that aren't typos
+fo = "fo"
+ba = "ba"
+inout = "inout"
+trun = "trun"
+fullset = "fullset"
+mone = "mone"
+requestor = "requestor"
+requestors = "requestors"
+clen = "clen"
+WRONLY = "WRONLY"
+TOU = "TOU"
+setp = "setp"
+mch = "mch"

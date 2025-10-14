@@ -45,20 +45,6 @@ class BuildMatrix:
             if match:
                 self.tag = match.group(1)
 
-    def create_docker_tag(self, image, env, command, platform):
-        """Create docker tag string if this is main branch or a tag"""
-        if self.branch == "main" or self.tag:
-            tag = f"{DOCKER_REPO}:{image}"
-            if self.tag:
-                tag += f"-{self.tag}"
-            if platform is not None:
-                tag += "-" + platform.split("/")[1]
-            env["DOCKER_TAG"] = tag
-            command += f" --tag={tag}"
-            return True, command
-
-        return False, command
-
     def add_build(
         self,
         name=None,
@@ -66,7 +52,6 @@ class BuildMatrix:
         args=default_args,
         jobs=6,
         env=None,
-        docker_tag=False,
         coverage=False,
         coverage_flags=None,
         recheck=True,
@@ -102,10 +87,6 @@ class BuildMatrix:
         if recheck and "DISTCHECK" not in env:
             command += " --recheck"
 
-        if docker_tag:
-            #  Only export docker_tag if this is main branch or a tag:
-            docker_tag, command = self.create_docker_tag(image, env, command, platform)
-
         if coverage:
             env["COVERAGE"] = "t"
 
@@ -126,7 +107,6 @@ class BuildMatrix:
                 "branch": self.branch,
                 "coverage": coverage,
                 "coverage_flags": coverage_flags,
-                "docker_tag": docker_tag,
                 "needs_buildx": needs_buildx,
                 "create_release": create_release,
                 "timeout_minutes": timeout_minutes,
@@ -139,7 +119,6 @@ class BuildMatrix:
         platforms=DEFAULT_MULTIARCH_PLATFORMS,
         default_suffix="",
         image=None,
-        docker_tag=True,
         **kwargs,
     ):
         for p, args in platforms.items():
@@ -148,7 +127,6 @@ class BuildMatrix:
                 self.add_build(
                     name + suffix,
                     platform=p,
-                    docker_tag=docker_tag,
                     image=image if image is not None else name,
                     command_args=args.get("command_args", ""),
                     timeout_minutes=args.get("timeout_minutes", 30),
@@ -239,7 +217,6 @@ matrix.add_build(
 matrix.add_build(
     name="el8",
     image="el8",
-    docker_tag=True,
 )
 
 print(matrix)

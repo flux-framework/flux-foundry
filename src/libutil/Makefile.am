@@ -25,7 +25,8 @@ libutil_la_SOURCES = \
 
 TESTS = \
 	test_errprintf.t \
-	test_fsd.t
+	test_fsd.t \
+	test_parse_size.t
 
 test_ldadd = \
         $(builddir)/libutil.la \
@@ -50,3 +51,7 @@ test_errprintf_t_LDADD = $(test_ldadd)
 test_fsd_t_SOURCES = test/fsd.c
 test_fsd_t_CPPFLAGS = $(test_cppflags)
 test_fsd_t_LDADD = $(test_ldadd)
+
+test_parse_size_t_SOURCES = test/parse_size.c
+test_parse_size_t_CPPFLAGS = $(test_cppflags)
+test_parse_size_t_LDADD = $(test_ldadd)

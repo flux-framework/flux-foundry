@@ -12,6 +12,8 @@ AM_CPPFLAGS = \
 	$(JANSSON_CFLAGS) \
 	$(CODE_COVERAGE_CPPFLAGS)
 
+pkgconfig_DATA = flux-conf.pc
+
 noinst_LTLIBRARIES = \
 	libconf.la
 

@@ -29,7 +29,8 @@ libutil_la_SOURCES = \
 
 TESTS = \
 	test_timestamp.t \
-	test_errprintf.t
+	test_errprintf.t \
+	test_fsd.t
 
 test_ldadd = \
         $(builddir)/libutil.la \
@@ -54,3 +55,7 @@ test_timestamp_t_LDADD = $(test_ldadd)
 test_errprintf_t_SOURCES = test/errprintf.c
 test_errprintf_t_CPPFLAGS = $(test_cppflags)
 test_errprintf_t_LDADD = $(test_ldadd)
+
+test_fsd_t_SOURCES = test/fsd.c
+test_fsd_t_CPPFLAGS = $(test_cppflags)
+test_fsd_t_LDADD = $(test_ldadd)

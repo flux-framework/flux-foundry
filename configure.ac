@@ -99,6 +99,7 @@ AC_CONFIG_FILES( \
   vendored/libveb/Makefile \
   vendored/libglibc/Makefile \
   vendored/libczmq/Makefile \
+  vendored/libtomlc99/Makefile \
   src/libmissing/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \
@@ -107,6 +108,8 @@ AC_CONFIG_FILES( \
   src/libidset/flux-idset.pc \
   src/liboptparse/Makefile \
   src/liboptparse/flux-optparse.pc \
+  src/libconf/Makefile \
+  src/libconf/flux-conf.pc \
   doc/Makefile \
   doc/test/Makefile \
 )

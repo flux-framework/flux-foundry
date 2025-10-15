@@ -4,11 +4,13 @@ SUBDIRS = \
 	vendored/libveb \
 	vendored/libglibc \
 	vendored/libczmq \
+	vendored/libtomlc99 \
 	src/libmissing \
 	src/libutil \
 	src/libhostlist \
 	src/libidset \
 	src/liboptparse \
+	src/libconf \
 	doc
 
 EXTRA_DIST = \

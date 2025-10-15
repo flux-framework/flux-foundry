@@ -24,7 +24,8 @@ libutil_la_SOURCES = \
 	errprintf.c
 
 TESTS = \
-	test_errprintf.t
+	test_errprintf.t \
+	test_fsd.t
 
 test_ldadd = \
         $(builddir)/libutil.la \
@@ -45,3 +46,7 @@ T_LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) \
 test_errprintf_t_SOURCES = test/errprintf.c
 test_errprintf_t_CPPFLAGS = $(test_cppflags)
 test_errprintf_t_LDADD = $(test_ldadd)
+
+test_fsd_t_SOURCES = test/fsd.c
+test_fsd_t_CPPFLAGS = $(test_cppflags)
+test_fsd_t_LDADD = $(test_ldadd)

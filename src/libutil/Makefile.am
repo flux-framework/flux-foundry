@@ -21,4 +21,6 @@ libutil_la_SOURCES = \
 	parse_size.h \
 	parse_size.c \
 	errprintf.h \
-	errprintf.c
+	errprintf.c \
+	basename.h \
+	basename.c

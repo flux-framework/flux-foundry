@@ -27,7 +27,9 @@ libutil_la_SOURCES = \
 	timestamp.h \
 	timestamp.c
 
-TESTS = test_timestamp.t
+TESTS = \
+	test_timestamp.t \
+	test_errprintf.t
 
 test_ldadd = \
         $(builddir)/libutil.la \
@@ -48,3 +50,7 @@ T_LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) \
 test_timestamp_t_SOURCES = test/timestamp.c
 test_timestamp_t_CPPFLAGS = $(test_cppflags)
 test_timestamp_t_LDADD = $(test_ldadd)
+
+test_errprintf_t_SOURCES = test/errprintf.c
+test_errprintf_t_CPPFLAGS = $(test_cppflags)
+test_errprintf_t_LDADD = $(test_ldadd)

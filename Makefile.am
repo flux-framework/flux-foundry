@@ -4,6 +4,7 @@ SUBDIRS = \
 	vendored/libveb \
 	vendored/libglibc \
 	vendored/libczmq \
+	vendored/libtomlc99 \
 	src/libmissing \
 	src/libutil \
 	src/libhostlist \

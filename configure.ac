@@ -99,6 +99,7 @@ AC_CONFIG_FILES( \
   vendored/libveb/Makefile \
   vendored/libglibc/Makefile \
   vendored/libczmq/Makefile \
+  vendored/libtomlc99/Makefile \
   src/libmissing/Makefile \
   src/libutil/Makefile \
   src/libhostlist/Makefile \

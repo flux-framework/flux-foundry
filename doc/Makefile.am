@@ -12,7 +12,8 @@ MAN3_FILES_PRIMARY = \
 	man3/idset_encode.3 \
 	man3/idset_decode.3 \
 	man3/idset_add.3 \
-	man3/idset_alloc.3
+	man3/idset_alloc.3 \
+	man3/flux_conf_create.3
 
 MAN3_FILES_SECONDARY = \
 	man3/hostlist_destroy.3 \
@@ -59,7 +60,13 @@ MAN3_FILES_SECONDARY = \
 	man3/idset_has_intersection.3 \
 	man3/idset_clear_all.3 \
 	man3/idset_free.3 \
-	man3/idset_free_check.3
+	man3/idset_free_check.3 \
+	man3/flux_conf_incref.3 \
+	man3/flux_conf_decref.3 \
+	man3/flux_conf_copy.3 \
+	man3/flux_conf_unpack.3 \
+	man3/flux_conf_pack.3 \
+	man3/flux_conf_parse.3
 
 RST_FILES  = \
 	$(MAN3_FILES_PRIMARY:.3=.rst)

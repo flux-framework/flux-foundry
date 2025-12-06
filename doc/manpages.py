@@ -69,4 +69,11 @@ man_pages = [
     ('man3/idset_alloc','idset_alloc', 'Allocate an id from an idset', [author], 3),
     ('man3/idset_alloc','idset_free', 'Allocate an id from an idset', [author], 3),
     ('man3/idset_alloc','idset_free_check', 'Allocate an id from an idset', [author], 3),
+    ('man3/flux_conf_create','flux_conf_create', 'create a config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_incref', 'take reference on config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_decref', 'drop reference on config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_copy', 'copy config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_unpack', 'parse config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_pack', 'build config object', [author], 3),
+    ('man3/flux_conf_create','flux_conf_parse', 'parse TOML config', [author], 3),
 ]
